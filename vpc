@@ -1,0 +1,11 @@
+chmod 400 vpc.pem
+ssh -i vpc.pem admin@<private ip of private instance>
+
+
+private instance:
+sudo yum install httpd -y
+sudo service httpd start
+sudo chkconfig httpd on
+
+public ip instance:
+curl <private ip of private instance>
