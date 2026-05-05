@@ -1,0 +1,5 @@
+create unique bucket name --> uncheck "Block all public access"--->acknowledge warning and crate bucket
+upload index.html and error .html in bucket
+go to s3 bucket-->permissions---> bucket policy--->update bucket nanme--->save
+properties---> Static website hosting--->enable--->Enter index.html and error.html-->SAVE
+again go to properties---> static website hosting--->URL 
