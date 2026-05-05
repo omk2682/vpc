@@ -1,0 +1,15 @@
+docker build -t yourusername/my-app:latest .
+docker run -d --name my-running-app yourusername/my-app:latest
+  # Log in to your account
+docker login
+
+# Push the image
+docker push yourusername/my-app:latest
+
+
+
+
+Action,         Command,                    Purpose
+Build,   docker build -t [tag] .,      Creates an image from a Dockerfile.
+Run,     docker run --name [name] [tag], Starts a container instance from an image.
+Push,    docker push [tag],             Uploads the image to Docker Hub.
