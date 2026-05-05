@@ -1,0 +1,29 @@
+Step 1: Create sales.csv on the local machine (See previous slide)
+Step 2: Create a new S3 bucket with name yourname-sales-lambda-demo-2026
+Step 3: Create Lambda function
+Search for lambda -> Create function -> Author from scratch
+Function name: sales_total_function
+Runtime: Python 3.x
+Permissions should be: Create a new role with basic Lambda permissions
+Click Create
+Go to Code tab and add the code shown on the next slide
+After that, click Deploy
+Step 4: Give Lambda permission to read from S3
+In the Lambda function page, open the Configuration tab
+Open Permissions
+Click the execution role name shown there. This opens IAM.
+In IAM, click Add permissions → Attach policies -> AmazonS3FullAccess
+Click Add permissions button
+Step 5: Configure S3 to trigger Lambda
+Go back to S3
+Open your bucket
+Open the Properties tab
+Scroll to Event notifications
+Click Create event notification
+Event notification name: sales-upload-trigger
+Under event types, choose All object create events
+Under Destination, choose Lambda function and select the sales-upload-trigger function
+Save
+Test :
+Upload the sales.csv file in the S3 bucket
+Check if the output file is created in the same bucket
